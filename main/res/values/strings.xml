@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DiceSimulation</string>
+    <string name="selection_string">Select dice to roll:</string>
+    <string name="roll_dice">Roll the dice</string>
+    <string name="pick_number">Pick a number:</string>
+    <string name="generate_random">Generate random number</string>
+    <string name="title_activity_result">Result</string>
+    <string name="back_to_main">Back</string>
 </resources>
