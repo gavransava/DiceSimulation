@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setupPicker();
     }
 
+    // Initialisation of the Spinner View
     public void setupSpinner(){
         Spinner diceSpinner = (Spinner) findViewById(R.id.spinner);
         Integer[] dice = new Integer[] {4,6,8,10,12,20};
@@ -27,30 +28,35 @@ public class MainActivity extends AppCompatActivity {
         diceSpinner.setAdapter(adapter);
     }
 
+    // Initialisation of the Picker View
     public void setupPicker() {
         NumberPicker numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
         numberPicker.setMinValue(2);
         numberPicker.setMaxValue(1000);
     }
 
+    // Method to be called when "Roll the Dice" button clicked
     public void sendDice(View view) {
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra(EXTRA_MESSAGE, getSpinnerValue());
         startActivity(intent);
     }
 
+    // Method to be called when "Generate random number" button clicked
     public void sendNumber(View view) {
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra(EXTRA_MESSAGE, getPickerValue());
         startActivity(intent);
     }
 
+    // Extract current spinner value
     public Integer getSpinnerValue(){
         Spinner diceSpinner = (Spinner) findViewById(R.id.spinner);
         String dice = diceSpinner.getSelectedItem().toString();
         return Integer.parseInt(dice);
     }
 
+    // Extract current picker value
     public Integer getPickerValue(){
         NumberPicker numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
         return numberPicker.getValue();

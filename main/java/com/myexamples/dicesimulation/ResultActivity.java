@@ -15,10 +15,12 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        //Display processed value sent from main activity
         TextView resultText = (TextView) findViewById(R.id.textView3);
         resultText.setText(getResultValue());
     }
 
+    // Process value sent from main activity
     public String getResultValue() {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -26,11 +28,13 @@ public class ResultActivity extends AppCompatActivity {
         return generateRandomNumber(maxValue).toString();
     }
 
+    // Random integer number generator (range: 1-max)
     public Integer generateRandomNumber(Integer max) {
         Random gen = new Random();
         return gen.nextInt(max) + 1;
     }
 
+    // Method to be called when "Back" button clicked
     public void BackToMainActivity(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
