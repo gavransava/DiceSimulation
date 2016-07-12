@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Initialisation of the Spinner View
-    public void setupSpinner(){
+    private void setupSpinner(){
         Spinner diceSpinner = (Spinner) findViewById(R.id.spinner);
         Integer[] dice = new Integer[] {4,6,8,10,12,20};
         ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, dice);
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Initialisation of the Picker View
-    public void setupPicker() {
+    private void setupPicker() {
         NumberPicker numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
         numberPicker.setMinValue(2);
         numberPicker.setMaxValue(1000);
@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Extract current spinner value
-    public Integer getSpinnerValue(){
+    private Integer getSpinnerValue(){
         Spinner diceSpinner = (Spinner) findViewById(R.id.spinner);
         String dice = diceSpinner.getSelectedItem().toString();
         return Integer.parseInt(dice);
     }
 
     // Extract current picker value
-    public Integer getPickerValue(){
+    private Integer getPickerValue(){
         NumberPicker numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
         return numberPicker.getValue();
     }

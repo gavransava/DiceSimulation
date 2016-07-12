@@ -21,7 +21,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     // Process value sent from main activity
-    public String getResultValue() {
+    private String getResultValue() {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         Integer maxValue = extras.getInt(MainActivity.EXTRA_MESSAGE);
@@ -29,7 +29,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     // Random integer number generator (range: 1-max)
-    public Integer generateRandomNumber(Integer max) {
+    private Integer generateRandomNumber(Integer max) {
         Random gen = new Random();
         return gen.nextInt(max) + 1;
     }
